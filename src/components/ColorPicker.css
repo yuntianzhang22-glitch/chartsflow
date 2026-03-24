@@ -1,0 +1,150 @@
+.color-picker-wrapper {
+  position: relative;
+}
+
+.color-picker-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.color-picker-trigger:hover {
+  border-color: var(--border-hover);
+}
+
+.color-preview {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.color-value {
+  flex: 1;
+  font-size: 12px;
+  font-family: monospace;
+  color: var(--text-primary);
+}
+
+.color-chevron {
+  color: var(--text-muted);
+}
+
+.color-picker-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px;
+  z-index: 100;
+  box-shadow: var(--shadow-lg);
+}
+
+.react-colorful {
+  width: 100% !important;
+  height: 150px !important;
+}
+
+.react-colorful__saturation {
+  border-radius: 4px 4px 0 0;
+}
+
+.react-colorful__hue {
+  height: 12px !important;
+  border-radius: 0 0 4px 4px;
+}
+
+.react-colorful__pointer {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.color-picker-section {
+  margin-top: 12px;
+}
+
+.color-picker-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.color-picker-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  min-width: 40px;
+}
+
+.color-input {
+  flex: 1;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 4px 6px;
+  font-size: 11px;
+  font-family: monospace;
+  color: var(--text-primary);
+}
+
+.color-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.color-input-color {
+  width: 40px;
+  height: 28px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.opacity-slider {
+  flex: 1;
+  height: 4px;
+  -webkit-appearance: none;
+  background: linear-gradient(to right, transparent, var(--accent));
+  border-radius: 2px;
+}
+
+.opacity-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.opacity-value {
+  font-size: 11px;
+  color: var(--text-muted);
+  min-width: 36px;
+  text-align: right;
+}
+
+.gradient-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.gradient-toggle input {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--accent);
+}

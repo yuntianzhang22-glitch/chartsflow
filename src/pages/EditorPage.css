@@ -1,0 +1,111 @@
+.editor-page {
+  display: none;
+  height: 100vh;
+  background-color: var(--bg-primary);
+}
+
+.editor-page.active {
+  display: grid !important;
+  grid-template-columns: 260px 1fr 300px;
+}
+
+.editor-sidebar {
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+  padding: 48px 16px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar-section h4 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.chart-types {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.chart-type-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 10px;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text-secondary);
+}
+
+.chart-type-btn:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+.chart-type-btn.active {
+  border-color: var(--accent);
+  background-color: rgba(37, 99, 235, 0.08);
+  color: var(--accent);
+}
+
+.chart-type-btn span:first-child {
+  font-size: 20px;
+}
+
+.chart-type-btn span:last-child {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.editor-main {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+}
+
+.editor-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.toolbar-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.toolbar-actions .btn {
+  padding: 8px 16px;
+  font-size: 13px;
+}
+
+@media (max-width: 1024px) {
+  .editor-page.active {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+  
+  .editor-sidebar,
+  .editor-panel {
+    border: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
