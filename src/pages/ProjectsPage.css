@@ -1,0 +1,244 @@
+.projects-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 36px 32px 60px;
+  min-height: calc(100vh - 60px);
+}
+
+/* ── Header ── */
+.projects-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.projects-header-left {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.projects-header-left h2 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.projects-count {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.projects-header-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.projects-header-right .btn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(37, 99, 235, 0.08);
+}
+
+/* ── Guest banner ── */
+.guest-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.guest-banner-tip {
+  color: var(--accent);
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* ── Empty / Loading state ── */
+.projects-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 100px 0;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.projects-state p {
+  font-size: 15px;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ── Grid ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* ── Card ── */
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.project-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Preview area */
+.project-card-preview {
+  width: 100%;
+  background: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 8px;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.project-card-preview svg {
+  display: block;
+  color: var(--text-muted);
+}
+
+/* Info area */
+.project-card-info {
+  padding: 12px 14px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.project-card-name-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.project-card-name {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+}
+
+.project-card-rename-input {
+  flex: 1;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--accent);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  padding: 2px 6px;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Meta row */
+.project-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.type-tag {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.project-date {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Action buttons row */
+.project-card-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.project-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-family: inherit;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.project-action-btn:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+.rename-btn {
+  padding: 4px 6px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.project-card:hover .rename-btn {
+  opacity: 1;
+}
+
+.star-btn:hover,
+.star-btn.starred {
+  border-color: #F59E0B;
+  color: #F59E0B;
+  background: rgba(245, 158, 11, 0.08);
+}
+
+.delete-btn {
+  margin-left: auto;
+}
+
+.delete-btn:hover {
+  border-color: var(--error);
+  color: var(--error);
+  background: rgba(239, 68, 68, 0.08);
+}

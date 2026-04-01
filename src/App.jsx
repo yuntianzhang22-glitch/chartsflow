@@ -1,21 +1,37 @@
+import { useEffect } from 'react';
 import { useChartStore } from './store/chartStore';
+import { useAuthStore } from './store/authStore';
+import Header from './components/Header';
+import AuthModal from './components/AuthModal';
 import HomePage from './pages/HomePage';
-import DataInputPage from './pages/DataInputPage';
 import EditorPage from './pages/EditorPage';
-import ThemeToggle from './components/ThemeToggle';
+import ProjectsPage from './pages/ProjectsPage';
+import ProfilePage from './pages/ProfilePage';
+import BillingPage from './pages/BillingPage';
+import SettingsPage from './pages/SettingsPage';
 import './App.css';
 
 function App() {
   const currentPage = useChartStore((state) => state.currentPage);
   const isDark = useChartStore((state) => state.isDark);
+  const init = useAuthStore((state) => state.init);
+
+  useEffect(() => {
+    init();
+  }, [init]);
 
   return (
     <div className={`app ${isDark ? 'dark' : 'light'}`} data-theme={isDark ? 'dark' : 'light'}>
-      <ThemeToggle />
-      
-      {currentPage === 'home' && <HomePage />}
-      {currentPage === 'dataInput' && <DataInputPage />}
-      {currentPage === 'editor' && <EditorPage />}
+      <Header />
+
+      {currentPage === 'home'      && <HomePage />}
+      {currentPage === 'projects'  && <ProjectsPage />}
+      {currentPage === 'editor'    && <EditorPage />}
+      {currentPage === 'profile'   && <ProfilePage />}
+      {currentPage === 'billing'   && <BillingPage />}
+      {currentPage === 'settings'  && <SettingsPage />}
+
+      <AuthModal />
     </div>
   );
 }

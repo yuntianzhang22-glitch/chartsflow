@@ -1,0 +1,127 @@
+.my-charts-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  min-height: calc(100vh - 60px);
+}
+
+.my-charts-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.my-charts-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.my-charts-header p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.charts-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 80px 0;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.charts-state p {
+  font-size: 15px;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.chart-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  position: relative;
+  padding: 20px;
+  transition: all 0.2s;
+}
+
+.chart-card:hover .delete-btn {
+  opacity: 1;
+}
+
+.chart-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.chart-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.chart-card-body h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chart-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.type-tag {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--accent);
+}
+
+.chart-date {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.delete-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.delete-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: var(--error);
+  color: var(--error);
+}

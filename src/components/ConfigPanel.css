@@ -211,3 +211,346 @@
   border-color: var(--accent);
   color: var(--accent);
 }
+
+/* 排序按钮组 */
+.sort-options {
+  display: flex;
+  gap: 4px;
+}
+
+.sort-btn {
+  flex: 1;
+  padding: 5px 6px;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: inherit;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.sort-btn:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+.sort-btn.active {
+  border-color: var(--accent);
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--accent);
+}
+
+/* 散点/气泡数据表头 */
+.data-list-header {
+  display: flex;
+  gap: 6px;
+  padding: 0 0 4px 0;
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.data-list-header span {
+  flex: 1;
+}
+
+.data-list-header span:last-child {
+  flex: 0 0 24px;
+}
+
+/* 散点图：3列 + 删除 */
+.data-list-row-4 {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 24px;
+  gap: 6px;
+  padding: 4px 0;
+  align-items: center;
+}
+
+/* 气泡图：4列 + 删除 */
+.data-list-row-5 {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 0.8fr 0.8fr 24px;
+  gap: 6px;
+  padding: 4px 0;
+  align-items: center;
+}
+
+.data-list-row-4 input,
+.data-list-row-5 input {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  padding: 5px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: inherit;
+  min-width: 0;
+}
+
+.data-list-row-4 input[type="number"],
+.data-list-row-5 input[type="number"] {
+  text-align: right;
+}
+
+.data-list-row-4 input:focus,
+.data-list-row-5 input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* 箱线图数据编辑器 */
+.boxplot-row {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.boxplot-row-header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 8px;
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border);
+}
+
+.boxplot-cat-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  padding: 0;
+}
+
+.boxplot-cat-input:focus {
+  outline: none;
+}
+
+.boxplot-values {
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.boxplot-value-row {
+  display: grid;
+  grid-template-columns: 1fr 80px;
+  align-items: center;
+  gap: 6px;
+}
+
+.boxplot-value-row input[type="number"] {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: inherit;
+  text-align: right;
+}
+
+.boxplot-value-row input[type="number"]:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* 多系列编辑器 */
+.data-list-row-single {
+  grid-template-columns: 1fr 24px;
+}
+
+.multi-series-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.series-block {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.series-block-header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 8px;
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border);
+}
+
+.series-name-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  padding: 0;
+}
+
+.series-name-input:focus {
+  outline: none;
+}
+
+.series-values {
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.series-value-row {
+  display: grid;
+  grid-template-columns: 1fr 80px;
+  align-items: center;
+  gap: 6px;
+}
+
+.series-cat-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.series-value-row input[type="number"] {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: inherit;
+  text-align: right;
+}
+
+.series-value-row input[type="number"]:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* 旭日图系列头部数值输入 */
+.series-name-value {
+  width: 56px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-size: 12px;
+  font-family: inherit;
+  padding: 0 4px;
+  border-radius: 4px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.series-name-value:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* 热力图编辑器 */
+.heatmap-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+}
+
+.heatmap-col-header {
+  display: flex;
+  gap: 4px;
+  align-items: flex-end;
+  padding-left: 0;
+}
+
+.heatmap-corner {
+  flex: 0 0 72px;
+}
+
+.heatmap-col-label-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+
+.heatmap-col-del {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.heatmap-row {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.heatmap-row-label-wrap {
+  flex: 0 0 72px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.heatmap-label-input {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  padding: 3px 5px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: inherit;
+  width: 100%;
+  min-width: 0;
+  text-align: center;
+}
+
+.heatmap-row-label {
+  text-align: left;
+}
+
+.heatmap-label-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.heatmap-cell {
+  flex: 1;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  padding: 4px 2px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: inherit;
+  text-align: center;
+  min-width: 0;
+}
+
+.heatmap-cell:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.heatmap-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
